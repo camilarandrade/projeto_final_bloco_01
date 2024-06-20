@@ -36,7 +36,7 @@ public class Menu {
 			try {
 				opcao = leia.nextInt();
 			} catch (InputMismatchException e) {
-				System.out.println("\nDigite a opção desejada ");
+				System.out.println("\nDigite a ");
 				leia.nextLine();
 				opcao = 0;
 			}
