@@ -2,26 +2,24 @@ package model;
 
 public abstract class Produto {
 	
-	private String idProduto;
+	private int idProduto;
 	private String nomeProduto;
-	private int ProdutosDisponiveis; 
 	private String Tipo;
 	private float valor;
 	
 	
-	public Produto(String idProduto, String nomeProduto, int produtosDisponiveis, float valor, String Tipo) {
+	public Produto(int idProduto, String nomeProduto, float valor, String Tipo) {
 		this.idProduto = idProduto;
 		this.nomeProduto = nomeProduto;
-		this.ProdutosDisponiveis = produtosDisponiveis;
 		this.Tipo = Tipo;
 		this.valor = valor;
 	}
 
-	public String getIdProduto() {
+	public int getIdProduto() {
 		return idProduto;
 	}
 
-	public void setIdProduto(String idProduto) {
+	public void setIdProduto(int idProduto) {
 		this.idProduto = idProduto;
 	}
 
@@ -33,14 +31,6 @@ public abstract class Produto {
 		this.nomeProduto = nomeProduto;
 	}
 
-	public int getProdutosDisponiveis() {
-		return ProdutosDisponiveis;
-	}
-
-	public void setProdutosDisponiveis(int produtosDisponiveis) {
-		this.ProdutosDisponiveis = produtosDisponiveis;
-	}
-	
 	public String getTipo() {
 		return Tipo;
 	}
@@ -65,7 +55,7 @@ public abstract class Produto {
 		System.out.println("*                    Dados do Produto                     *");
 		System.out.println("***********************************************************");
 		System.out.println("\nNome do Produto: " + this.nomeProduto);
-		System.out.println("\nNome do Produto: " + this.Tipo);
+		System.out.println("Tipo do Produto " + this.Tipo);
 		System.out.println("Valor do Produto: " + this.valor);
 	}
 

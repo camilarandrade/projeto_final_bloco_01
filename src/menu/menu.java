@@ -1,8 +1,10 @@
-package projeto_final_bloco_01;
+package menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Menu {
+import model.Acessorios;
+
+public class menu {
 	
 	public static Scanner leia = new Scanner(System.in);
 
@@ -11,6 +13,18 @@ public class Menu {
 		Scanner leia = new Scanner (System.in);	
 		
 		int opcao;
+		
+		Acessorios a1= new Acessorios (1, "Jóia Gana",60.0f,"Brinco","Prata" );
+		a1.visualizar();
+		
+		Acessorios a2= new Acessorios (2, "Jóia Congo",160.0f,"Brinco","Ouro" );
+		a2.visualizar();
+		
+		Acessorios a3= new Acessorios (3, "Adorno Senegal",300.0f,"Colar","Prata" );
+		a3.visualizar();
+		
+		Acessorios a4= new Acessorios (4, "Adorno Mali",500.0f,"Colar","Ouro" );
+		a4.visualizar();
 		
 		while (true) {
 			
@@ -56,6 +70,7 @@ public class Menu {
 			
 			case 2:
 				System.out.println("Ver todos os produtos ");
+				
 				
 				break;
 				
