@@ -65,11 +65,10 @@ public class menu {
 				leia.close();
 				System.exit(0);
 			}
-			System.out.println("Cadastrar novo Produto\n\n");
+			
 			switch (opcao) {
 			case 1:
-				
-				
+				System.out.println("Cadastrar novo Produto\n\n");
 				System.out.println("Digite o nome do Produto: ");
 				leia.nextLine();
 				nomeProduto = leia.nextLine();
@@ -91,6 +90,7 @@ public class menu {
 			
 			case 2:
 				System.out.println("Ver todos os produtos ");
+				produto.listar();
 				
 				
 				break;
