@@ -17,18 +17,7 @@ public class menu {
 		int opcao, id;
 		String nomeProduto, Tipo, material;
 		float valor;
-		
-		Acessorios a1= new Acessorios (1, "Jóia Gana",60.0f,"Brinco","Prata" );
-		a1.visualizar();
-		
-		Acessorios a2= new Acessorios (2, "Jóia Congo",160.0f,"Brinco","Ouro" );
-		a2.visualizar();
-		
-		Acessorios a3= new Acessorios (3, "Adorno Senegal",300.0f,"Colar","Prata" );
-		a3.visualizar();
-		
-		Acessorios a4= new Acessorios (4, "Adorno Mali",500.0f,"Colar","Ouro" );
-		a4.visualizar();
+
 		
 		while (true) {
 			
@@ -41,9 +30,8 @@ public class menu {
 			System.out.println("                                                     ");
 			System.out.println("            1 - Cadastrar novo Produto               ");
 			System.out.println("            2 - Ver todos os Produtos                ");
-			System.out.println("            3 - Buscar Produto por Numero            ");
-			System.out.println("            4 - Atualizar Dados do Produto           ");
-			System.out.println("            5 - Apagar Produto                        ");
+			System.out.println("            3 - Atualizar Dados do Produto           ");
+			System.out.println("            4 - Apagar Produto                        ");
 			System.out.println("            0 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
@@ -96,17 +84,40 @@ public class menu {
 				break;
 				
 			case 3:
-				System.out.println( "Buscar produto por número\n\n");
+				System.out.println( "Atualizar dados do Produto\n\n");
+				System.out.println("Digite o código do Produto: ");
+				id = leia.nextInt();
+
+				var buscaProduto = produto.buscarNaCollection(id);
+				
+				if(buscaProduto!=null) {
+					System.out.println("\nDigite o nome do Produto: ");
+					leia.nextLine();
+					nomeProduto = leia.nextLine();
+					
+					System.out.println("\nDigite o valor: ");
+					valor = leia.nextFloat();
+					leia.nextLine();
+					
+					System.out.println("\nDigite o tipo do produto: ");
+					Tipo = leia.nextLine();
+					
+					System.out.println("\nDigite o material do produto: ");
+					material = leia.nextLine();
+					
+					produto.atualizar(new Acessorios(id, nomeProduto, valor, Tipo, material));
+				} else {
+					System.out.println("\nO Produto não foi localizado!");
+				}
 				
 				break;
 				
 			case 4:
-				System.out.println( "Atualizar dados do Produto\n\n");
-				
-				break;
-				
-			case 5:
 				System.out.println("Apagar Produto\n\n");
+				System.out.println("Digite o código do Produto: ");
+				id = leia.nextInt();
+
+				produto.deletar(id);
 				
 				break;
 			

@@ -38,7 +38,7 @@ public class ProdutoController implements ProdutosRepository {
 		
 	}
 
-	private Optional<Produto> buscarNaCollection(int id) {
+	 public Optional<Produto> buscarNaCollection(int id) {
 		for (var produto:listaProdutos) {
 			if(produto.getid()==id) {
 				return Optional.of(produto);
@@ -54,16 +54,17 @@ public class ProdutoController implements ProdutosRepository {
 		
 		if(produto.isPresent()) {
 			if (listaProdutos.remove(produto.get())==true)
-				System.out.println("O produto id: " + id + "foi excluído com sucesso!");
+				System.out.println("O produto id: " + id + " foi excluído com sucesso!");
 		} else {
 			
-			System.out.println("O produto id: " + id + "não foi localizado!");
+			System.out.println("O produto id: " + id + " não foi localizado!");
 		}
 		
 	}
 	
 	public int gerarNumero() {
 		return ++id;
+		
 	}
 
 
