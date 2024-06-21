@@ -1,7 +1,8 @@
 package menu;
 import java.util.InputMismatchException;
+import model.*;
+import produto.controller.ProdutoController;
 import java.util.Scanner;
-
 import model.Acessorios;
 
 public class menu {
@@ -10,9 +11,12 @@ public class menu {
 
 	public static void main(String[] args) {
 	
+		ProdutoController produto= new ProdutoController();
 		Scanner leia = new Scanner (System.in);	
 		
-		int opcao;
+		int opcao, id;
+		String nomeProduto, Tipo, material;
+		float valor;
 		
 		Acessorios a1= new Acessorios (1, "Jóia Gana",60.0f,"Brinco","Prata" );
 		a1.visualizar();
@@ -61,11 +65,28 @@ public class menu {
 				leia.close();
 				System.exit(0);
 			}
-			
+			System.out.println("Cadastrar novo Produto\n\n");
 			switch (opcao) {
 			case 1:
-				System.out.println("Cadastrar novo Produto\n\n");
-			
+				
+				
+				System.out.println("Digite o nome do Produto: ");
+				leia.nextLine();
+				nomeProduto = leia.nextLine();
+
+				System.out.println("\nDigite o tipo do Produto: ");
+				Tipo = leia.nextLine();
+
+				System.out.print("\nDigite o valor do produto: ");
+				valor = leia.nextFloat();
+				leia.nextLine();
+
+				System.out.println("\nDigite o material do produto:  ");
+				material = leia.nextLine();
+
+				produto.cadastrar(new Acessorios(produto.gerarNumero(),nomeProduto, valor, Tipo, material));
+				
+				
 				break;
 			
 			case 2:
@@ -98,6 +119,7 @@ public class menu {
 		
 	}
 		
+
 		public static void sobre() {
 			System.out.println("\n*********************************************************");
 			System.out.println("Projeto Desenvolvido por: ");

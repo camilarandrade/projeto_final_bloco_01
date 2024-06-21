@@ -6,7 +6,8 @@ public interface ProdutosRepository {
 
 public void cadastrar (Produto produto);
 public void listar();
-public void buscar();
-public void deletar(int idProduto);
+public void atualizar(Produto produto);
+public void deletar(int id);
 	
 }
+ 	

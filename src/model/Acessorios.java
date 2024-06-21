@@ -4,9 +4,9 @@ public class Acessorios extends Produto{
 
 	private String material;
 
-	public Acessorios(int idProduto, String nomeProduto, float valor, String Tipo,
+	public Acessorios(int id, String nomeProduto, float valor, String Tipo,
 			String material) {
-		super(idProduto, nomeProduto, valor, Tipo);
+		super(id, nomeProduto, valor, Tipo);
 		this.material = material;
 	}
 
@@ -18,5 +18,10 @@ public class Acessorios extends Produto{
 		this.material = material;
 	} 
 	
+	@Override
+	public void visualizar() {
+		super.visualizar();
+		System.out.println("Material: " + this.material);
 	
+	}
 }
